@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class WhatIfActivityHw 
+{
+	public static void main(String[]args )
+	{
+		int cusId;
+		String cusFname;
+		String cusLname;
+		double saleAmt;
+		String taxcode;
+		double totalAmt1;
+		double totalAmt2;
+		double totalAmt3;
+		
+		Scanner keyboard = new Scanner(System.in);
+		
+		System.out.print("Customer ID: ");
+		cusId = keyboard.nextInt(); 
+		
+		System.out.print("Customer First Name: ");
+		cusFname = keyboard.next();
+		
+		System.out.print("Customer Last Name: ");
+		cusLname = keyboard.next();
+		
+		System.out.print("Sales Amount: $");
+		saleAmt = keyboard.nextDouble();
+		
+		System.out.print("Tax Code: ");
+		taxcode = keyboard.next();
+		
+		totalAmt1 = saleAmt + (saleAmt * 6/100);
+		totalAmt2 = saleAmt + (saleAmt * 0/100);
+		totalAmt3 = saleAmt + (saleAmt * 4.5/100);
+		
+		System.out.println("Customer ID: " + cusId);
+		System.out.println("Customer Name: " + cusFname + cusLname);
+		System.out.println("Sales Amount: $" + saleAmt);
+		System.out.println("Tax Code: " + taxcode);
+		
+		if (taxcode.equals("NRM"))
+		{System.out.println("Total Amount Due: $" + totalAmt1);}
+		
+		else if (taxcode.equals("NPF"))
+			{System.out.println("Total Amount Due: $" + totalAmt2);}
+		
+		else if (taxcode.equals("BIZ"))
+			{System.out.println("Total Amount Due: $" + totalAmt3);}
+	}
+}
